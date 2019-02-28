@@ -3,6 +3,7 @@
 <%= @woman.name %>
 <br>
 <h2>SUPERPOWERS⭐️🌟💫✨</h2>
+<%= button_to "ADD SUPERPOWER", new_superpower_path, :method => :get %>
 <ul>
   <% @woman_superpowers.each do |superp| %>
   <li>

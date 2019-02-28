@@ -15,8 +15,12 @@ class WomenController < ApplicationController
 
   def create
     woman = Woman.create(woman_params)
-    # byebug
-    redirect_to woman_path(woman)
+    if woman.valid?
+      redirect_to woman_path(woman)
+    else
+      flash[:errors] = woman.errors.full_messages
+      redirect_to new_woman_path
+    end 
   end
 
   def edit
