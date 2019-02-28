@@ -40,6 +40,10 @@ class SuperpowersController < ApplicationController
     redirect_to superpowers_path
   end
 
+  def favorite
+    render 'fave_super_power'
+  end
+
   private
 
   def superpower_params
