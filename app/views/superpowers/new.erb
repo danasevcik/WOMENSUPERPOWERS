@@ -1,9 +1,16 @@
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
+
+
 <h1>ADD SUPERPOWER 👑</h1>
 <%= form_for @superpower do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br>
-  <%= f.label :Has_This_Been_Seen_Before? %>
+  <%= f.label :New_Superpower? %>
   <%= f.select :seen_before?, [true,false] %>
   <br>
   <%= f.label :Which_Woman_Does_This_Belong_To? %>

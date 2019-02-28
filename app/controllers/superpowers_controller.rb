@@ -16,8 +16,12 @@ class SuperpowersController < ApplicationController
 
   def create
     superpower = Superpower.create(superpower_params)
-    # redirect_to superpower_path(superpower)
-    redirect_to woman_path(superpower.woman_id)
+    if superpower.valid?
+      redirect_to woman_path(superpower.woman_id)
+    else
+      flash[:errors] = superpower.errors.full_messages
+      redirect_to new_superpower_path
+    end
   end
 
   def edit
