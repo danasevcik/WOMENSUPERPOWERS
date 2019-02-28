@@ -1,0 +1,10 @@
+<h1>ALL THE SUPERPOWERS✨💫🌟⭐️</h1>
+<h2>ADD NEW SUPERPOWER👑</h2>
+<%= button_to "ADD SUPERPOWER", new_superpower_path(@superpower), :method => :get %>
+<% @superpowers.each do |superp| %>
+  <h3>NAME:</h3>
+  <%= link_to superp.name, superpower_path(superp) %>
+  <br>
+  <h3>WHOSE WOMANS⁉️</h3>
+  <%= link_to superp.woman.name, woman_path(superp.woman) %>
+<% end %>

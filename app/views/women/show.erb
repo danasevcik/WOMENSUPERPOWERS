@@ -1,0 +1,16 @@
+<h1>👑</h1>
+<h2>NAME:</h2>
+<%= @woman.name %>
+<br>
+<h2>SUPERPOWERS⭐️🌟💫✨</h2>
+<ul>
+  <% @woman_superpowers.each do |superp| %>
+  <li>
+    <%= link_to superp.name, superpower_path(superp) %>
+  </li>
+  <% end %>
+</ul>
+<h2>EDIT?</h2>
+<%= button_to 'EDIT', edit_woman_path(@woman), :method => :get %>
+<h2>DELETE?</h2>
+<%= button_to 'DELETE', @woman, :method => :delete %>

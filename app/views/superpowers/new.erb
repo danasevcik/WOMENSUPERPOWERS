@@ -1,0 +1,13 @@
+<h1>ADD SUPERPOWER 👑</h1>
+<%= form_for @superpower do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :Has_This_Been_Seen_Before? %>
+  <%= f.select :seen_before?, [true,false] %>
+  <br>
+  <%= f.label :Which_Woman_Does_This_Belong_To? %>
+  <%= f.collection_select(:woman_id, Woman.all, :id, :name) %>
+  <br>
+  <%= f.submit %>
+<% end %>

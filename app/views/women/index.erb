@@ -1,0 +1,7 @@
+<h1>ALL WOMEN🙋‍🙋‍🙋‍</h1>
+<h2>ADD NEW👑</h2>
+<%= button_to "ADD WOMAN", new_woman_path(@woman), :method => :get %>
+<% @women.each do |woman| %>
+  <h3>NAME:</h3>
+  <%= link_to woman.name, woman_path(woman) %>
+<% end %>
